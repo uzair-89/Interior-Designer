@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gemini Creative Suite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* For ImageComparisonSlider */
+      .comparison-slider {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      .comparison-slider > * {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+      }
+      .comparison-slider > .after-image {
+        clip-path: inset(0 0 0 50%);
+      }
+      .comparison-slider > input[type="range"] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        cursor: col-resize;
+        opacity: 0;
+      }
+      .comparison-slider > .slider-line {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background-color: white;
+        left: 50%;
+        transform: translateX(-50%);
+        pointer-events: none;
+      }
+      .comparison-slider > .slider-handle {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         width: 40px;
+         height: 40px;
+         background-color: white;
+         border-radius: 50%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         pointer-events: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.28.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-slate-900 text-white">
+    <div id="root"></div>
+  </body>
+</html>
